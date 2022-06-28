@@ -1,0 +1,219 @@
+/* Cores usadas para as posições de classificação: 
+azul-marinho (#003366),
+azul-celeste (#1398BE), 
+laranja (#DE9800), 
+cinza (#CCCCCC) e 
+vermelho (#C91B04) */
+:root {
+  --cor-clas-azul-marinho: #003366;
+  --cor-clas-azul-celeste: #1398be;
+  --cor-clas-laranja: #de9800;
+  --cor-clas-cinza: #cccccc;
+  --cor-clas-vermelho: #c91b04;
+}
+
+/* Cores de los bordes de tablas */
+:root {
+  --cor-bordas-cinza-claro: #dddddd;
+  --cor-bordas-cinza-escuro: #cccccc;
+}
+
+/* Cor de fondo nas colunas “P”, “V”, “D”, “GC” e “%” */
+:root {
+  --cor-bg-tabela: #f7f7f7;
+}
+
+/* Cores das fontes de texto */
+:root {
+  --cor-font-cinza-claro: #999999;
+  --cor-font-cinza-claro-2: #8f8f8f;
+  --cor-font-cinza-medio: #666666;
+  --cor-font-cinza-escuro: #555555;
+  --cor-font-preto: #000;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Arial;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+table {
+  width: 38rem;
+  border-collapse: collapse;
+  border: 1px solid var(--cor-bordas-cinza-claro);
+  text-align: center;
+}
+
+/* Títulos das colunas tamanho 13px, cor #999999,*/
+thead {
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--cor-font-cinza-claro);
+  align-items: center;
+  height: 1.5rem;
+}
+
+/* Uso de bordas com espessura de 1px, cor #DDDDDD, para separação entre as linhas */
+tr {
+  border-bottom: 1px solid var(--cor-bordas-cinza-claro);
+}
+
+/* exceção às bordas de separação entre o 4°/5° time e 16°/17° time, que devem apresentar borda de 2px, cor #CCCCCC */
+tr:nth-child(4),
+tr:nth-child(16) {
+  border-bottom: 2px solid var(--cor-bordas-cinza-escuro);
+}
+
+/* todas as colunas de classificação (com exceção da coluna “%”) apresentem a mesma largura */
+thead th:nth-child(2),
+thead th:nth-child(3),
+thead th:nth-child(4),
+thead th:nth-child(5),
+thead th:nth-child(6),
+thead th:nth-child(7),
+thead th:nth-child(8),
+thead th:nth-child(9) {
+  width: 2.5rem;
+}
+thead th:nth-child(10) {
+  width: 3rem;
+}
+
+/* células dos valores exibidos nas colunas “P”, “V”, “D”, “GC” e “%” cor de fundo #F7F7F7 */
+tbody td:nth-child(3),
+tbody td:nth-child(5),
+tbody td:nth-child(7),
+tbody td:nth-child(9),
+tbody td:nth-child(11) {
+  background-color: var(--cor-bg-tabela);
+}
+
+/* estilo clasificações */
+tbody th {
+  font-size: 18px;
+  font-weight: bold;
+  height: 1.8rem;
+  width: 2.5rem;
+}
+
+/* Cores usadas para as posições de classificação: */
+/* azul-marinho (#003366), */
+tbody tr:nth-child(1),
+tbody tr:nth-child(2),
+tbody tr:nth-child(3) {
+  color: var(--cor-clas-azul-marinho);
+}
+
+/* azul-celeste (#1398BE), */
+tbody tr:nth-child(4) {
+  color: var(--cor-clas-azul-celeste);
+}
+
+/* laranja (#DE9800), */
+tbody tr:nth-child(5),
+tbody tr:nth-child(6),
+tbody tr:nth-child(7),
+tbody tr:nth-child(8),
+tbody tr:nth-child(9),
+tbody tr:nth-child(10),
+tbody tr:nth-child(11),
+tbody tr:nth-child(12) {
+  color: var(--cor-clas-laranja);
+}
+
+/* cinza (#CCCCCC), */
+tbody tr:nth-child(13),
+tbody tr:nth-child(14),
+tbody tr:nth-child(15),
+tbody tr:nth-child(16) {
+  color: var(--cor-clas-cinza);
+}
+
+/* e vermelho (#C91B04); */
+tbody tr:nth-child(17),
+tbody tr:nth-child(18),
+tbody tr:nth-child(19),
+tbody tr:nth-child(20) {
+  color: var(--cor-clas-vermelho);
+}
+
+/* Demais colunas de classificação: tamanho 14px, cor #666666 */
+tbody td {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--cor-font-cinza-medio);
+  text-align: center;
+}
+
+/* Nomes dos times: tamanho 14px, cor #666666 */
+.team {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--cor-font-cinza-medio);
+  text-align: left;
+}
+
+/* Coluna quantidade de pontos dos times: tamanho 14px, cor preta */
+.points {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--cor-font-preto);
+  text-align: center;
+}
+
+/* Legendas: tamanho 10px, cor #8F8F8F, alinhamento à esquerda;*/
+tfoot {
+  font-size: 10px;
+  text-align: left;
+  color: var(--cor-font-cinza-claro-2);
+}
+
+/* Siglas: cor #555555 e formato negritado  */
+.legend {
+  font-weight: bold;
+  color: var(--cor-font-cinza-escuro);
+}
+
+tfoot tr {
+  border: none;
+}
+
+tfoot tr:first-child td {
+  padding: 7px 0px 0px 7px;
+}
+
+tfoot tr:last-child td {
+  padding: 5px 0px 7px 7px;
+}
+
+img {
+  height: 10px;
+  width: 10px;
+  border-radius: 2px;
+}
+
+.azul-marinho {
+  background: var(--cor-clas-azul-marinho);
+}
+.azul-celeste {
+  background: var(--cor-clas-azul-celeste);
+}
+.laranja {
+  background: var(--cor-clas-laranja);
+}
+.vermelho {
+  background: var(--cor-clas-vermelho);
+}
